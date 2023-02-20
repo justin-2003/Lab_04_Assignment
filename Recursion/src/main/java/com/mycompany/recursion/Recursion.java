@@ -10,7 +10,7 @@ package com.mycompany.recursion;
  */
 public class Recursion {
     
-    //Task 1
+    //TASK 1
     
     static void countDown(int num){
     
@@ -26,8 +26,22 @@ public class Recursion {
         countDown(num - 1);
         }
     }
+    
+    
+    //TASK 2
+    
+    static int gcd(int x, int y){
+        if(x==y){
+            return y; // if they are equal then that's the biggest divisor.
+        }else if (x > y) {
+            return gcd(x - y, y); // substracts x - y, and calls the function recursively.
+        } else {
+            return gcd(x, y - x); // substracts y - x, and calls the function recursively.
+        }
+    }
+    
     public static void main(String[] args) {
        countDown(1);
-        
+       System.out.println(gcd(5,25));
     }
 }
