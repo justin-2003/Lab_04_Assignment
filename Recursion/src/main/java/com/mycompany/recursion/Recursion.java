@@ -61,11 +61,25 @@ public class Recursion {
        numberOne(n-1);
     }
 }
+    //No: 2
+    
+    public static int sumMultiplesOfSeven(int n1, int n2) {
+        if (n1 > n2) {
+            return 0; //if n1 is greater than n2, return 0
+        } else {
+            if (n1 % 7 == 0) {
+                return n1 + sumMultiplesOfSeven(n1 + 7, n2); // If n1 is a multiple of 7, add it to the sum and recurse with n1 + 7
+            } else {
+                return sumMultiplesOfSeven(n1 + 1, n2); // If n1 is not a multiple of 7, recurse with n1 + 1
+            }
+        }
+    }
+
     
     public static void main(String[] args) {
        countDown(1);
        System.out.println(gcd(5,25));
        numberOne(10);
-       
+       System.out.println(sumMultiplesOfSeven(48,25));
     }
 }
