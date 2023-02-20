@@ -74,6 +74,22 @@ public class Recursion {
             }
         }
     }
+    
+    static int binarySearch(int[] arr, int left, int right, int x){
+    if (right >= left) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == x) {
+                return mid; //if the middle element is equal to x, return its index
+            }
+            if (arr[mid] > x) {
+                return binarySearch(arr, left, mid - 1, x); // If the middle element is greater than x, search the left half
+            } else {
+                return binarySearch(arr, mid + 1, right, x); // If the middle element is less than x, search the right half
+            }
+        }
+        return -1; // If the element is not present in the array, return -1
+    }
+    
 
     
     public static void main(String[] args) {
@@ -81,5 +97,9 @@ public class Recursion {
        System.out.println(gcd(5,25));
        numberOne(10);
        System.out.println(sumMultiplesOfSeven(48,25));
+       int[] array = {1, 3, 5, 7, 9, 11};
+       int x = 7;
+       int index = (binarySearch(array, 0,array.length-1, x));
+       System.out.println("Index of " + x + ": " + index);
     }
 }
