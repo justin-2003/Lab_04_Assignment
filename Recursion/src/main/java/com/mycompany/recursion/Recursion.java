@@ -40,8 +40,32 @@ public class Recursion {
         }
     }
     
+    //TASK 3
+    
+    int fib(int n){
+       if (n <= 0){ // base case
+            return 0;
+       }else if (n == 1){ // base case
+             return 1;
+       }else{
+             return fib(n-1) + fib(n-2);
+       }
+}
+    
+    // Following Problems
+    // No: 1
+    
+    static void numberOne(int n){
+    if(n > 0){
+       System.out.println("Hello World!");
+       numberOne(n-1);
+    }
+}
+    
     public static void main(String[] args) {
        countDown(1);
        System.out.println(gcd(5,25));
+       numberOne(10);
+       
     }
 }
